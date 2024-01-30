@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Increíble Efectos Animados</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      section {
+        background: rgb(36, 36, 36);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        filter: hue-rotate(70deg);
+      }
+
+      .cargador {
+        position: relative;
+        transform: rotate(calc(45deg * var(--r)));
+      }
+
+      .cargador span {
+        position: absolute;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 2px;
+        transform-origin: right;
+        transform: rotate(calc(18deg * var(--i)));
+      }
+
+      .cargador span::before {
+        content: " ";
+        position: absolute;
+        top: calc(-15 / 2);
+        width: 15px;
+        height: 15px;
+        background: rgb(0, 255, 115);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgb(238, 255, 0), 0 0 20px rgb(238, 255, 0),
+          0 0 40px rgb(238, 255, 0), 0 0 60px rgb(238, 255, 0),
+          0 0 80px rgb(238, 255, 0), 0 0 100px rgb(238, 255, 0);
+        animation: efecto 5s linear infinite;
+        animation-delay: calc(-0.5s * var(--i));
+      }
+      @keyframes efecto {
+        0% {
+          transform: translateX(200px) scale(1);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(0px) scale(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="cargador" style="--r: 1">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+      </div>
+      <div class="cargador" style="--r: 2">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+      </div>
+      <div class="cargador" style="--r: 3">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+      </div>
+      <div class="cargador" style="--r: 4">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+      </div>
+    </section>
+  </body>
+</html>

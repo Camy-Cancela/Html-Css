@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animacion con Cartas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: black;
+        overflow: hidden;
+      }
+
+      .contendor {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contendor .carta {
+        position: absolute;
+        width: 240px;
+        height: 320px;
+        border-radius: 8px;
+        background: teal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 8em;
+        font-weight: 700;
+        border: 10px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: 0.5s;
+        transform-origin: 50% 100%;
+        filter: hue-rotate(calc(var(--i) * 50deg));
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+      }
+      .contendor:hover .carta {
+        transform: rotate(calc(var(--i) * 5deg))
+          translate(calc(var(--i) * 120px), -50px);
+        color: rgba(0, 0, 0, 0.25);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+      }
+      .contendor:active .carta {
+        background: grey;
+      }
+
+      .contendor .carta:active {
+        translate: calc(var(--i) * 20px) -50px;
+        z-index: 100;
+        background: #5e5cfe;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contendor">
+      <div class="carta" style="--i: -4">1</div>
+      <div class="carta" style="--i: -3">2</div>
+      <div class="carta" style="--i: -2">3</div>
+      <div class="carta" style="--i: -1">4</div>
+      <div class="carta" style="--i: 0">5</div>
+      <div class="carta" style="--i: 1">6</div>
+      <div class="carta" style="--i: 2">7</div>
+      <div class="carta" style="--i: 3">8</div>
+      <div class="carta" style="--i: 4">9</div>
+    </div>
+  </body>
+</html>

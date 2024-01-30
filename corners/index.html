@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efecto de Esquinas Resplandeciente</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: black;
+        gap: 200px;
+      }
+
+      .caja {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background: rgb(27, 27, 27);
+      }
+
+      .caja::before {
+        content: " ";
+        position: absolute;
+        inset: -3px;
+        background: linear-gradient(
+          45deg,
+          #00ccff,
+          rgb(27, 27, 27),
+          rgb(27, 27, 27),
+          #ff9a02
+        );
+        box-shadow: 0 0 0 20px rgb(27, 27, 27);
+        z-index: -1;
+      }
+
+      .caja::after {
+        content: " ";
+        position: absolute;
+        inset: -3px;
+        background: linear-gradient(
+          45deg,
+          #00ccff,
+          rgb(27, 27, 27),
+          rgb(27, 27, 27),
+          #fffb02
+        );
+        box-shadow: 0 0 0 20px rgb(27, 27, 27);
+        z-index: -1;
+        filter: blur(20px);
+      }
+
+      .caja:nth-child(2)::before,
+      .caja:nth-child(2)::after {
+        background: linear-gradient(
+          45deg,
+          #ff00d4,
+          rgb(27, 27, 27),
+          rgb(27, 27, 27),
+          #ff0202
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="caja"></div>
+    <div class="caja"></div>
+  </body>
+</html>

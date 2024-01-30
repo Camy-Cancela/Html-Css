@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corazon con luces</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #222;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .corazon {
+        position: relative;
+        width: 120px; /* Aumenta el tamaño del corazón */
+        height: 120px; /* Aumenta el tamaño del corazón */
+        background: red;
+        transform: rotate(-45deg);
+        box-shadow: -10px 10px 90px red;
+        animation: efecto 0.6s linear infinite;
+      }
+
+      @keyframes efecto {
+        0% {
+          transform: rotate(-45deg) scale(1.07);
+        }
+        80% {
+          transform: rotate(-45deg) scale(1);
+        }
+        100% {
+          transform: rotate(-45deg) scale(0.8);
+        }
+      }
+
+      .corazon::before,
+      .corazon::after {
+        content: " ";
+        position: absolute;
+        width: 120px; /* Aumenta el tamaño del corazón */
+        height: 120px; /* Aumenta el tamaño del corazón */
+        background: red;
+        border-radius: 50%;
+        box-shadow: -10px 10px 90px red;
+      }
+
+      .corazon::before {
+        top: -50%;
+      }
+
+      .corazon::after {
+        right: -50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="corazon"></div>
+  </body>
+</html>

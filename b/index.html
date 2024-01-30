@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texto Iluminado</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: arial;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: rgb(22, 22, 22);
+      }
+
+      h2 {
+        font-size: 94px;
+        font-weight: 500;
+        color: rgb(78, 77, 77);
+        letter-spacing: 2px;
+        cursor: pointer;
+      }
+      h2 span {
+        transition: 0.5s;
+      }
+      h2:hover span:nth-child(1) {
+        margin-right: 10px;
+      }
+
+      h2:hover span:nth-child(2) {
+        margin-left: 40px;
+      }
+
+      h2:hover span {
+        color: lightskyblue;
+        text-shadow: 0 0 10px rgb(0, 66, 107), 0 0 20px rgb(0, 66, 107),
+          0 0 40px rgb(0, 66, 107), 0 0 80px rgb(0, 66, 107),
+          0 0 100px rgb(0, 66, 107), 0 0 120px rgb(0, 66, 107),
+          0 0 160px rgb(0, 66, 107);
+      }
+    </style>
+  </head>
+  <body>
+    <h2><span>Oferta</span>-<span>Exclusiva!!</span></h2>
+  </body>
+</html>

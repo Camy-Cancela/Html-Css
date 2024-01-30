@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cargador</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background: #123;
+      }
+
+      .cargador {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        perspective: 800px;
+      }
+
+      .cargador .interior {
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      .interior .uno,
+      .interior .dos,
+      .interior .tres {
+        border-radius: 50%; /* Agregado para hacer las secciones internas ovaladas */
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+      }
+
+      .interior .uno {
+        top: 0;
+        left: 0;
+        border-bottom: 3px solid lawngreen;
+        box-shadow: 0px 4px 10px 1px rgb(43, 255, 0);
+        animation: efecto1 1s linear infinite;
+      }
+      .interior .dos {
+        top: 0;
+        right: 0;
+        border-bottom: 3px solid lawngreen;
+        box-shadow: 0px 4px 10px 1px rgb(43, 255, 0);
+        animation: efecto2 1s linear infinite;
+      }
+      .interior .tres {
+        bottom: 0;
+        right: 0;
+        border-bottom: 3px solid lawngreen;
+        box-shadow: 0px 4px 10px 1px rgb(43, 255, 0);
+        animation: efecto3 1s linear infinite;
+      }
+
+      @keyframes efecto1 {
+        0% {
+          transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+        }
+        100% {
+          transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+        }
+      }
+
+      @keyframes efecto2 {
+        0% {
+          transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+        }
+        100% {
+          transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+        }
+      }
+
+      @keyframes efecto3 {
+        0% {
+          transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+        }
+        100% {
+          transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cargador">
+      <div class="interior">
+        <div class="uno"></div>
+        <div class="dos"></div>
+        <div class="tres"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animacion de fondo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: black;
+        overflow: hidden;
+      }
+      .burbujas {
+        position: relative;
+        min-width: 450px;
+        height: 450px;
+        margin: -90px;
+        transform-origin: right;
+        animation: cambioColor 4s linear infinite;
+      }
+
+      .burbujas:nth-child(even) {
+        transform-origin: left;
+      }
+      @keyframes cambioColor {
+        0% {
+          filter: hue-rotate(0deg);
+          transform: rotate(0deg);
+        }
+        0% {
+          filter: hue-rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      .burbujas span {
+        position: absolute;
+        top: calc(80px * var(--i));
+        left: calc(80px * var(--i));
+        bottom: calc(80px * var(--i));
+        right: calc(80px * var(--i));
+      }
+      .burbujas span::before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        width: 15px;
+        height: 15px;
+        background: rojo;
+        border-radius: 50%;
+      }
+      .burbujas span:nth-child(3n + 1)::before {
+        background: rgba(253, 0, 211, 1);
+        box-shadow: 0 0 20px rgba(253, 0, 211, 1), 0 0 40px rgba(253, 0, 211, 1),
+          0 0 60px rgba(253, 0, 211, 1), 0 0 80px rgba(253, 0, 211, 1),
+          0 0 0 8px rgba(253, 0, 211, 1);
+      }
+      .burbujas span:nth-child(3n + 2)::before {
+        background: rgba(253, 0, 126, 1);
+        box-shadow: 0 0 20px rgba(253, 0, 126, 1), 0 0 40px rgba(253, 0, 126, 1),
+          rgba(253, 0, 126, 1), 0 0 80px rgba (253, 0, 126, 1),
+          rgba(253, 0, 126, 1);
+      }
+      .burbujas span:nth-child(3n + 3)::before {
+        background: rgba(253, 0, 34, 1);
+        box-shadow: 0 0 20px rgba(253, 0, 34, 1), 0 0 40px rgba(253, 0, 34, 1),
+          0 0 60px rgba(253, 0, 34, 1), 0 0 80px rgba(253, 0, 34, 1),
+          0 0 0 8px rgba(253, 0, 34, 1);
+      }
+      .burbujas span:nth-child(3n + 1) {
+        animation: efecto 10s alternate infinite;
+      }
+      .burbujas span:nth-child(3n + 2) {
+        animation: efecto-reversa 3s alternate infinite;
+      }
+      .burbujas span:nth-child(3n + 3) {
+        animation: efecto 8s alternate infinite;
+      }
+      @keyframes efecto {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes efecto-reversa {
+        0% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="burbujas">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+    <div class="burbujas">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+    <div class="burbujas">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+    <div class="burbujas">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+    <div class="burbujas">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+    <div class="burbujas">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+    <div class="burbujas">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+    <div class="burbujas">
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+  </body>
+</html>

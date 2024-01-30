@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Efectos de animación de texto al pasar el cursor sobre el menu
+    </title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #222;
+      }
+
+      ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      ul li {
+        position: relative;
+        list-style: none;
+      }
+
+      ul li a {
+        position: relative;
+        font-size: 64px;
+        text-decoration: none;
+        line-height: 64px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+      }
+
+      ul li a::before {
+        content: attr(data-text);
+        position: absolute;
+        color: var(--clr);
+        width: 0;
+        overflow: hidden;
+        transition: 1s;
+        border-right: 8px solid var(--clr);
+        -webkit-text-stroke: 1px var(--clr);
+        -webkit-text-stroke: 1px;
+      }
+
+      ul li a:hover::before {
+        width: 100%;
+        filter: drop-shadow(0 0 25px var(--clr));
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li style="--clr: #01ff38">
+        <a href="#" data-text="&nbsp;Inicio">&nbsp;Inicio&nbsp;</a>
+      </li>
+      <li style="--clr: #01ffc0">
+        <a href="#" data-text="&nbsp;Nosotros"> &nbsp;Nosotros&nbsp;</a>
+      </li>
+      <li style="--clr: #01eeff">
+        <a href="#" data-text="&nbsp;Servicios"> &nbsp;Servicios&nbsp;</a>
+      </li>
+      <li style="--clr: #01a2ff">
+        <a href="#" data-text="&nbsp;Equipo">&nbsp;Equipo&nbsp;</a>
+      </li>
+      <li style="--clr: #8401ff">
+        <a href="#" data-text="&nbsp;Contacto">&nbsp;Contacto&nbsp;</a>
+      </li>
+      <li style="--clr: #c401ff">
+        <a href="#" data-text="&nbsp;Productos">&nbsp;Productos&nbsp;</a>
+      </li>
+    </ul>
+  </body>
+</html>

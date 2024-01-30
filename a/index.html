@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover efecto animado</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #0f0f0f;
+      }
+
+      .cargador {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #5f5f5f50);
+      }
+
+      .cargador:hover {
+        background: lightgreen;
+        box-shadow: 0 0 5px lightgreen, 0 0 25px lightgreen, 0 0 50px lightgreen,
+          0 0 200px lightgreen;
+      }
+
+      .cargador span {
+        position: absolute;
+        display: block;
+      }
+
+      .cargador span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(90deg, transparent, lightgreen);
+        animation: efecto1 1s linear infinite;
+        animation-delay: 0s;
+      }
+
+      @keyframes efecto1 {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      .cargador span:nth-child(3) {
+        bottom: 0;
+        left: -100%;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(270deg, transparent, lightgreen);
+        animation: efecto3 1s linear infinite;
+        animation-delay: 0s;
+      }
+
+      @keyframes efecto3 {
+        0% {
+          left: 100%;
+        }
+        100% {
+          left: -100%;
+        }
+      }
+
+      .cargador span:nth-child(2) {
+        right: 0;
+        top: -100%;
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, lightgreen);
+        animation: efecto2 1s linear infinite;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes efecto2 {
+        0% {
+          top: -100%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+
+      .cargador span:nth-child(4) {
+        left: 0;
+        top: 100%;
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(0deg, transparent, lightgreen);
+        animation: efecto4 1s linear infinite;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes efecto4 {
+        0% {
+          top: 100%;
+        }
+        100% {
+          top: -100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cargador">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+.posicion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider {
+  background-image: url("/sliders/Fotos/1.jpg");
+  background-size: cover;
+  height: 60%;
+  width: 50%;
+  border-radius: 20px;
+  animation: efecto 10s infinite;
+}
+
+@keyframes efecto {
+  20% {
+    background-image: url("/sliders/Fotos/5.jpg");
+    background-size: cover;
+  }
+  40% {
+    background-image: url("/sliders/Fotos/4.jpg");
+    background-size: cover;
+  }
+  60% {
+    background-image: url("/sliders/Fotos/3.jpg");
+    background-size: cover;
+  }
+  80% {
+    background-image: url("/sliders/Fotos/2.jpg");
+    background-size: cover;
+  }
+  100% {
+    background-image: url("/sliders/Fotos/1.jpg");
+  }
+}
